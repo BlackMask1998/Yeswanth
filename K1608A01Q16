@@ -105,11 +105,11 @@ void main()
 
 	s.qsnppr=0;
 
-	//pthread_create(&t1,NULL,S1,&s);
+	//pthread_create(&t1,NULL,Student1,&s);
 
-	//pthread_create(&t2,NULL,S2,&s);
+	//pthread_create(&t2,NULL,Student2,&s);
 
-	//pthread_create(&t3,NULL,S3,&s);
+	//pthread_create(&t3,NULL,Student3,&s);
 
 	while(c!=3)
 
@@ -151,11 +151,11 @@ void main()
 	}
 	
 		if(a1 != 1)
-		pthread_create(&t1,NULL,S1,&s);
+		pthread_create(&t1,NULL,Student1,&s);
 		if(a2 != 1)
-		pthread_create(&t2,NULL,S2,&s);
+		pthread_create(&t2,NULL,Student2,&s);
 		if(a3 != 1)
-		pthread_create(&t3,NULL,S3,&s);
+		pthread_create(&t3,NULL,Student3,&s);
 
 		if(a1 != 1)
 		pthread_join(t1,NULL);
