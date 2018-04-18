@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<pthread.h>
-#include<sys/types.h>
-#include<unistd.h>
 #include<semaphore.h>
+#include<unistd.h>
+#include<sys/types.h>
 
 int c=0,a1=0,a2=0,a3=0;
 sem_t x;
@@ -26,7 +26,7 @@ void *Student1(void *p)
 	}
 	else
 	{
-		printf("1st student completed the task\n");
+		printf(" \nCompleted the task By First Student\n");
 		a1=1;
 		c++;
 		s->pen=0;
@@ -52,7 +52,7 @@ void *Student2(void *p)
 		}	
 	else
 	{		
-		printf("2nd student completed the task\n");
+		printf("\nCompleted the task by Second Student\n");
 		a2=1;
 		c++;
 		s->qsnppr=0;
@@ -78,7 +78,7 @@ void *Student3(void *p)
 	}	
 	else
 	{
-		printf("3rd student completed the task\n");
+		printf("\nCompleted the task by Third Student\n");
 		a3=1;
 		c++;
 		s->qsnppr=0;
@@ -105,16 +105,16 @@ void main()
 
 	s.qsnppr=0;
 
-	//pthread_create(&t1,NULL,Student1,&s);
+	pthread_create(&t1,NULL,Student1,&s);
 
-	//pthread_create(&t2,NULL,Student2,&s);
+	pthread_create(&t2,NULL,Student2,&s);
 
-	//pthread_create(&t3,NULL,Student3,&s);
+	pthread_create(&t3,NULL,Student3,&s);
 
 	while(c!=3)
 
 	{
-	printf("Enter the things you want to place in the shared table\n");
+	printf("\nEnter the things you want to place in the shared table\n");
 	printf("Enter 1 for Pen and paper\n");
 	printf("Enter 2 for pen and qustion paper\n");
 	printf("Enter 3 for paper and question paper\n");
@@ -169,5 +169,5 @@ void main()
 
 	}
 
-	printf("All students completed the task!!!");
+	printf("Great....!All students had completed the task");
 }
