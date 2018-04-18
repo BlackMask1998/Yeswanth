@@ -92,7 +92,7 @@ void *Student3(void *p)
 void main()
 {
 
-	em_init(&x,0,2);
+	sem_init(&x,0,2);
 	int a;
 
 	pthread_t t1,t2,t3;
